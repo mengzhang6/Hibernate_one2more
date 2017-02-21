@@ -1,0 +1,33 @@
+<!-- <xml version="1.0" encoding="UTF-8" /> -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库属性 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///hibernate_one2more?useUnicode=true&amp;characterEncoding=UTF-8</property>
+		<!-- 方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- 显示sql -->
+		<property name="show_sql">true</property>
+		<!-- <property name="format_sql">true</property> -->
+
+		<!-- create update -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- 数据库表的默认前缀 -->
+		<!-- <property name="hibernate.default_schema">meng</property> -->
+		
+		<!--使用sessionFactory.getCurrentSession()创建session需要使用 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- 指定映射文件的路径-->
+		<mapping resource="meng/study/hibernate/one2more/Student.hbm.xml" />
+		<mapping resource="meng/study/hibernate/one2more/Grade.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
